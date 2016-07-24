@@ -1,0 +1,11 @@
+###
+# Echo server
+###
+
+echo-server:
+  image: echo-server
+  container_name: echo-server
+  environment:
+    - PORT=8888
+  ports:
+    - "8888:8888"
