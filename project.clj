@@ -1,4 +1,5 @@
-(defproject echo-server "0.1.0-SNAPSHOT"
+(defproject echo-server "0.1.0
+"
   :description "Echo server"
   :url "https://github.com/julienchastang/echo-server"
   :license {:name "Eclipse Public License"
