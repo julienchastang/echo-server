@@ -14,7 +14,7 @@
  
 (defn -main [& args]
   (let [port (if args
-               (int (first args))
+               (read-string (first args))
                8888)]
     (ss/create-server port echo-server)))
 
