@@ -13,8 +13,8 @@
  			(recur))))
  
 (defn -main [& args]
-  (let [port (if *command-line-args*
-               (int (first *command-line-args*))
+  (let [port (if args
+               (int (first args))
                8888)]
     (ss/create-server port echo-server)))
 
