@@ -5,11 +5,6 @@
   (:require 
    [server.socket :as ss]))
 
-(def port
-  (if *command-line-args*
-    (int (first *command-line-args*))
-    8888))
-
 (defn echo-server [in out]
  	(binding [*in* (BufferedReader. (InputStreamReader. in))
             *out* (OutputStreamWriter. out)]
@@ -18,5 +13,8 @@
  			(recur))))
  
 (defn -main [& args]
-  (ss/create-server port echo-server))
+  (let [port (if *command-line-args*
+               (int (first *command-line-args*))
+               8888)]
+    (ss/create-server port echo-server)))
 
