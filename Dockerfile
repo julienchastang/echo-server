@@ -48,7 +48,11 @@ RUN lein deps
 # Build the stand alone jar 
 ###
 
-RUN mv "$(lein uberjar | sed -n 's/^Created \(.*standalone\.jar\)/\1/p')" echo-server.jar
+RUN lein uberjar
+
+RUN mv ./target/uberjar/*standalone* echo-server.jar
+
+RUN lein clean
 
 ###
 # Run it!
